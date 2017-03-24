@@ -1,0 +1,14 @@
+{
+	"name": "/hopalertsfetch",
+	"description": " Custom plugin to retrieve alert reports from different sources ",
+	"type": "craft-plugin",
+	"authors": [
+		{
+			"name": "Hop Studios",
+			"homepage": "https://www.hopstudios.com/software/"
+		}
+	],
+	"require": {
+		"composer/installers": "~1.0"
+	}
+}

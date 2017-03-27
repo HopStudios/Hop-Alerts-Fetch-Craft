@@ -181,8 +181,8 @@ class HopAlertsFetchPlugin extends BasePlugin
     protected function defineSettings()
     {
         return array(
-            'alerts_section_id'                 => array(AttributeType::String, 'label' => 'Section for new Alerts', 'default' => ''),
-            'alerts_expired_section_id'         => array(AttributeType::String, 'label' => 'Section for expired Alerts', 'default' => ''),
+            'alerts_section_handle'             => array(AttributeType::String, 'label' => 'Section for new Alerts', 'default' => ''),
+            'alerts_expired_section_handle'     => array(AttributeType::String, 'label' => 'Section for expired Alerts', 'default' => ''),
             'wmata_api_key'                     => array(AttributeType::String, 'label' => 'WMATA API Key', 'default' => ''),
             'twitter_oauth_access_token'        => array(AttributeType::String, 'label' => 'Twitter oauth access token', 'default' => ''),
             'twitter_oauth_access_token_secret' => array(AttributeType::String, 'label' => 'Twitter oauth access token secret', 'default' => ''),
@@ -190,6 +190,7 @@ class HopAlertsFetchPlugin extends BasePlugin
             'twitter_consumer_secret'           => array(AttributeType::String, 'label' => 'Twitter consumer secret', 'default' => ''),
             'time_refresh'                      => array(AttributeType::Number, 'label' => 'Refresh Time', 'default' => (5*60)),
             'time_expired'                      => array(AttributeType::Number, 'label' => 'Expiration Time', 'default' => (60*60*12)),
+            'author_id'                         => array(AttributeType::Number, 'label' => 'Author ID', 'default' => 1),
         );
     }
 

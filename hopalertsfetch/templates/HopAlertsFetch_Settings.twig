@@ -18,21 +18,29 @@
 {% includeJsResource "hopalertsfetch/js/HopAlertsFetch_Script.js" %}
 
 {{ forms.selectField({
-    label: settings.getAttributeLabel('alerts_section_id'),
+    label: settings.getAttributeLabel('alerts_section_handle'),
     instructions: 'Section where new Alerts will be saved',
-    id: 'alerts_section_id',
-    name: 'alerts_section_id',
-    value: settings['alerts_section_id'],
+    id: 'alerts_section_handle',
+    name: 'alerts_section_handle',
+    value: settings['alerts_section_handle'],
     options: sections})
 }}
 
 {{ forms.selectField({
-    label: settings.getAttributeLabel('alerts_expired_section_id'),
+    label: settings.getAttributeLabel('alerts_expired_section_handle'),
     instructions: 'Section where expired Alerts will be saved',
-    id: 'alerts_expired_section_id',
-    name: 'alerts_expired_section_id',
-    value: settings['alerts_expired_section_id'],
+    id: 'alerts_expired_section_handle',
+    name: 'alerts_expired_section_handle',
+    value: settings['alerts_expired_section_handle'],
     options: sections})
+}}
+
+{{ forms.textField({
+    label: settings.getAttributeLabel('author_id'),
+    instructions: 'Author of alert entries that will be created by the plugin',
+    id: 'author_id',
+    name: 'author_id', 
+    value: settings['author_id']})
 }}
 
 {{ forms.textField({

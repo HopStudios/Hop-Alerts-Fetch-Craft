@@ -17,8 +17,26 @@
 {% includeCssResource "hopalertsfetch/css/HopAlertsFetch_Style.css" %}
 {% includeJsResource "hopalertsfetch/js/HopAlertsFetch_Script.js" %}
 
+{{ forms.selectField({
+    label: settings.getAttributeLabel('alerts_section_id'),
+    instructions: 'Section where new Alerts will be saved',
+    id: 'alerts_section_id',
+    name: 'alerts_section_id',
+    value: settings['alerts_section_id'],
+    options: sections})
+}}
+
+{{ forms.selectField({
+    label: settings.getAttributeLabel('alerts_expired_section_id'),
+    instructions: 'Section where expired Alerts will be saved',
+    id: 'alerts_expired_section_id',
+    name: 'alerts_expired_section_id',
+    value: settings['alerts_expired_section_id'],
+    options: sections})
+}}
+
 {{ forms.textField({
-    label: 'Refresh Time',
+    label: settings.getAttributeLabel('time_refresh'),
     instructions: 'Time in seconds before refreshing all alerts (default: 5 min)',
     id: 'time_refresh',
     name: 'time_refresh', 
@@ -26,7 +44,7 @@
 }}
 
 {{ forms.textField({
-    label: 'Expiration Time',
+    label: settings.getAttributeLabel('time_expired'),
     instructions: 'Time in seconds before setting an alert as expired (default: 12 hrs)',
     id: 'time_expired',
     name: 'time_expired', 
@@ -34,7 +52,7 @@
 }}
 
 {{ forms.textField({
-    label: 'WMATA API Key',
+    label: settings.getAttributeLabel('wmata_api_key'),
     instructions: 'API key to retrieve data from https://developer.wmata.com',
     id: 'wmata_api_key',
     name: 'wmata_api_key', 
@@ -42,7 +60,7 @@
 }}
 
 {{ forms.textField({
-    label: 'Twitter oauth access token',
+    label: settings.getAttributeLabel('twitter_oauth_access_token'),
     instructions: 'To get from https://apps.twitter.com/',
     id: 'twitter_oauth_access_token',
     name: 'twitter_oauth_access_token', 
@@ -50,7 +68,7 @@
 }}
 
 {{ forms.textField({
-    label: 'Twitter oauth access token secret',
+    label: settings.getAttributeLabel('twitter_oauth_access_token_secret'),
     instructions: 'To get from https://apps.twitter.com/',
     id: 'twitter_oauth_access_token_secret',
     name: 'twitter_oauth_access_token_secret', 
@@ -58,7 +76,7 @@
 }}
 
 {{ forms.textField({
-    label: 'Twitter consumer key',
+    label: settings.getAttributeLabel('twitter_consumer_key'),
     instructions: 'To get from https://apps.twitter.com/',
     id: 'twitter_consumer_key',
     name: 'twitter_consumer_key', 
@@ -66,7 +84,7 @@
 }}
 
 {{ forms.textField({
-    label: 'Twitter consumer secret',
+    label: settings.getAttributeLabel('twitter_consumer_secret'),
     instructions: 'To get from https://apps.twitter.com/',
     id: 'twitter_consumer_secret',
     name: 'twitter_consumer_secret', 

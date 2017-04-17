@@ -4,7 +4,7 @@ namespace Craft;
 
 class Main_Helper
 {
-	public static function createEntry($sectionHandle, $authorID, $title, $type, $customID, $content, $timestamp = NULL)
+	public static function createEntry($sectionHandle, $author_id, $title, $type, $type_handle, $custom_id, $custom_id_handle, $content, $content_handle, $timestamp = NULL)
 	{
 		$entry = new EntryModel();
 		$entry->sectionId = craft()->sections->getSectionByHandle($sectionHandle)->id;
@@ -16,10 +16,13 @@ class Main_Helper
 		}
 		$postDate = DateTime::createFromString($postDate, craft()->timezone);
 
-		$entry->authorId      = $authorID;
-		$entry->postDate      = $postDate;
-		// $entry->expiryDate    = $expiryDate;
-		$entry->enabled       = TRUE;
+		$entry->enabled								= TRUE;
+		$entry->authorId 							= $author_id;
+		$entry->postDate							= $postDate;
+		$entry->getContent()->title					= $title;
+		$entry->getContent()->{$type_handle}		= $type;
+		$entry->getContent()->{$custom_id_handle}	= $custom_id;
+		$entry->getContent()->{$content_handle}		= $content;
 
 		$entry->getContent()->title = $title;
 

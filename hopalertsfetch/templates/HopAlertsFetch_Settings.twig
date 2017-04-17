@@ -18,107 +18,107 @@
 {% includeJsResource "hopalertsfetch/js/HopAlertsFetch_Script.js" %}
 
 {{ forms.selectField({
-    label: settings.getAttributeLabel('alerts_section_handle'),
-    instructions: 'Section where new Alerts will be saved',
-    id: 'alerts_section_handle',
-    name: 'alerts_section_handle',
-    value: settings['alerts_section_handle'],
-    options: sections})
+	label: settings.getAttributeLabel('alerts_section_handle'),
+	instructions: 'Section where new Alerts will be saved',
+	id: 'alerts_section_handle',
+	name: 'alerts_section_handle',
+	value: settings['alerts_section_handle'],
+	options: sections})
 }}
 
 {{ forms.selectField({
-    label: settings.getAttributeLabel('alerts_expired_section_handle'),
-    instructions: 'Section where expired Alerts will be saved',
-    id: 'alerts_expired_section_handle',
-    name: 'alerts_expired_section_handle',
-    value: settings['alerts_expired_section_handle'],
-    options: sections})
+	label: settings.getAttributeLabel('alerts_expired_section_handle'),
+	instructions: 'Section where expired Alerts will be saved',
+	id: 'alerts_expired_section_handle',
+	name: 'alerts_expired_section_handle',
+	value: settings['alerts_expired_section_handle'],
+	options: sections})
 }}
 
 {{ forms.textField({
-    label: settings.getAttributeLabel('author_id'),
-    instructions: 'Author of alert entries that will be created by the plugin',
-    id: 'author_id',
-    name: 'author_id', 
-    value: settings['author_id']})
+	label: settings.getAttributeLabel('author_id'),
+	instructions: 'Author of alert entries that will be created by the plugin',
+	id: 'author_id',
+	name: 'author_id', 
+	value: settings['author_id']})
 }}
 
 {{ forms.textField({
-    label: settings.getAttributeLabel('field_name_alert_type'),
-    instructions: 'Field handle where alert type will be stored',
-    id: 'field_name_alert_type',
-    name: 'field_name_alert_type', 
-    value: settings['field_name_alert_type']})
+	label: settings.getAttributeLabel('field_name_alert_type'),
+	instructions: 'Field handle where alert type will be stored',
+	id: 'field_name_alert_type',
+	name: 'field_name_alert_type', 
+	value: settings['field_name_alert_type']})
 }}
 
 {{ forms.textField({
-    label: settings.getAttributeLabel('field_name_alert_ext_id'),
-    instructions: 'Field handle where alert external id will be stored',
-    id: 'field_name_alert_ext_id',
-    name: 'field_name_alert_ext_id', 
-    value: settings['field_name_alert_ext_id']})
+	label: settings.getAttributeLabel('field_name_alert_ext_id'),
+	instructions: 'Field handle where alert external id will be stored',
+	id: 'field_name_alert_ext_id',
+	name: 'field_name_alert_ext_id', 
+	value: settings['field_name_alert_ext_id']})
 }}
 
 {{ forms.textField({
-    label: settings.getAttributeLabel('field_name_alert_body'),
-    instructions: 'Field handle where alert body text will be stored',
-    id: 'field_name_alert_body',
-    name: 'field_name_alert_body', 
-    value: settings['field_name_alert_body']})
+	label: settings.getAttributeLabel('field_name_alert_body'),
+	instructions: 'Field handle where alert body text will be stored',
+	id: 'field_name_alert_body',
+	name: 'field_name_alert_body', 
+	value: settings['field_name_alert_body']})
 }}
 
 {{ forms.textField({
-    label: settings.getAttributeLabel('time_refresh'),
-    instructions: 'Time in seconds before refreshing all alerts (default: 5 min)',
-    id: 'time_refresh',
-    name: 'time_refresh', 
-    value: settings['time_refresh']})
+	label: settings.getAttributeLabel('time_refresh'),
+	instructions: 'Time in seconds before refreshing all alerts (default: 5 min)',
+	id: 'time_refresh',
+	name: 'time_refresh', 
+	value: settings['time_refresh']})
 }}
 
 {{ forms.textField({
-    label: settings.getAttributeLabel('time_expired'),
-    instructions: 'Time in seconds before setting an alert as expired (default: 12 hrs)',
-    id: 'time_expired',
-    name: 'time_expired', 
-    value: settings['time_expired']})
+	label: settings.getAttributeLabel('time_expired'),
+	instructions: 'Time in seconds before setting an alert as expired (default: 12 hrs)',
+	id: 'time_expired',
+	name: 'time_expired', 
+	value: settings['time_expired']})
 }}
 
 {{ forms.textField({
-    label: settings.getAttributeLabel('wmata_api_key'),
-    instructions: 'API key to retrieve data from https://developer.wmata.com',
-    id: 'wmata_api_key',
-    name: 'wmata_api_key', 
-    value: settings['wmata_api_key']})
+	label: settings.getAttributeLabel('wmata_api_key'),
+	instructions: 'API key to retrieve data from https://developer.wmata.com',
+	id: 'wmata_api_key',
+	name: 'wmata_api_key', 
+	value: settings['wmata_api_key']})
 }}
 
 {{ forms.textField({
-    label: settings.getAttributeLabel('twitter_oauth_access_token'),
-    instructions: 'To get from https://apps.twitter.com/',
-    id: 'twitter_oauth_access_token',
-    name: 'twitter_oauth_access_token', 
-    value: settings['twitter_oauth_access_token']})
+	label: settings.getAttributeLabel('twitter_oauth_access_token'),
+	instructions: 'To get from https://apps.twitter.com/',
+	id: 'twitter_oauth_access_token',
+	name: 'twitter_oauth_access_token', 
+	value: settings['twitter_oauth_access_token']})
 }}
 
 {{ forms.textField({
-    label: settings.getAttributeLabel('twitter_oauth_access_token_secret'),
-    instructions: 'To get from https://apps.twitter.com/',
-    id: 'twitter_oauth_access_token_secret',
-    name: 'twitter_oauth_access_token_secret', 
-    value: settings['twitter_oauth_access_token_secret']})
+	label: settings.getAttributeLabel('twitter_oauth_access_token_secret'),
+	instructions: 'To get from https://apps.twitter.com/',
+	id: 'twitter_oauth_access_token_secret',
+	name: 'twitter_oauth_access_token_secret', 
+	value: settings['twitter_oauth_access_token_secret']})
 }}
 
 {{ forms.textField({
-    label: settings.getAttributeLabel('twitter_consumer_key'),
-    instructions: 'To get from https://apps.twitter.com/',
-    id: 'twitter_consumer_key',
-    name: 'twitter_consumer_key', 
-    value: settings['twitter_consumer_key']})
+	label: settings.getAttributeLabel('twitter_consumer_key'),
+	instructions: 'To get from https://apps.twitter.com/',
+	id: 'twitter_consumer_key',
+	name: 'twitter_consumer_key', 
+	value: settings['twitter_consumer_key']})
 }}
 
 {{ forms.textField({
-    label: settings.getAttributeLabel('twitter_consumer_secret'),
-    instructions: 'To get from https://apps.twitter.com/',
-    id: 'twitter_consumer_secret',
-    name: 'twitter_consumer_secret', 
-    value: settings['twitter_consumer_secret']})
+	label: settings.getAttributeLabel('twitter_consumer_secret'),
+	instructions: 'To get from https://apps.twitter.com/',
+	id: 'twitter_consumer_secret',
+	name: 'twitter_consumer_secret', 
+	value: settings['twitter_consumer_secret']})
 }}

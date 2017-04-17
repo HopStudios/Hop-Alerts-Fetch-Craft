@@ -191,6 +191,14 @@ class HopAlertsFetchPlugin extends BasePlugin
             'time_refresh'                      => array(AttributeType::Number, 'label' => 'Refresh Time', 'default' => (5*60)),
             'time_expired'                      => array(AttributeType::Number, 'label' => 'Expiration Time', 'default' => (60*60*12)),
             'author_id'                         => array(AttributeType::Number, 'label' => 'Author ID', 'default' => 1),
+            'last_update_bus'                   => array(AttributeType::Number, 'label' => 'Last time Bus alerts were updated', 'default' => 0),
+            'last_update_rail'                  => array(AttributeType::Number, 'label' => 'Last time Bus alerts were updated', 'default' => 0),
+            'last_update_car'                   => array(AttributeType::Number, 'label' => 'Last time Bus alerts were updated', 'default' => 0),
+            'last_update_train_marc'            => array(AttributeType::Number, 'label' => 'Last time MARC train alerts were updated', 'default' => 0),
+            'last_update_train_vavre'           => array(AttributeType::Number, 'label' => 'Last time VAVRE train alerts were updated', 'default' => 0),
+            'last_update_bus_art'               => array(AttributeType::Number, 'label' => 'Last time ART Bus alerts were updated', 'default' => 0),
+            'last_update_bus_montgomery_rideon' => array(AttributeType::Number, 'label' => 'Last time RideOn Bus alerts were updated', 'default' => 0),
+            'last_update_bus_dc_circulator'     => array(AttributeType::Number, 'label' => 'Last time DC Circulator Bus alerts were updated', 'default' => 0),
         );
     }
 

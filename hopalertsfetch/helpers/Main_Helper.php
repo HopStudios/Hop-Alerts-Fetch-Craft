@@ -4,17 +4,16 @@ namespace Craft;
 
 class Main_Helper
 {
-	public static function createAlertEntry($sectionHandle, $author_id, $title, $type, $type_handle, $custom_id, $custom_id_handle, $content, $content_handle, $timestamp = NULL)
+	public static function createAlertEntry($sectionHandle, $author_id, $title, $type, $type_handle, $custom_id, $custom_id_handle, $content, $content_handle, $datetime = NULL)
 	{
 		$entry = new EntryModel();
 		$entry->sectionId = craft()->sections->getSectionByHandle($sectionHandle)->id;
 
 		$postDate = new DateTime();
-		if ($timestamp)
+		if ($datetime)
 		{
-			$postDate->setTimestamp($timestamp);
+			$postDate = $datetime;
 		}
-		$postDate = DateTime::createFromString($postDate, craft()->timezone);
 
 		$entry->enabled								= TRUE;
 		$entry->authorId 							= $author_id;
@@ -30,7 +29,6 @@ class Main_Helper
 		}
 		else
 		{
-
 			HopAlertsFetchPlugin::log('Tried to create an Alert entry but saving into DB failed: '.$entry->getErrors() , LogLevel::Error);
 		}
 	}

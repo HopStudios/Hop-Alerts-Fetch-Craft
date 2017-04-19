@@ -127,9 +127,9 @@ class Wmata_Helper
 						}
 						$title = substr($title, 0, -2);
 
-						// DateTime is in Eastern Standard Time EST, we need to convert it to GMT/UTC to store it
+						// DateTime is in Eastern Standard Time EST, we need to convert it to local Craft timezone
 						$dt = new DateTime($busIncident->DateUpdated, new \DateTimeZone('EST'));
-						$dt->setTimezone(new \DateTimeZone('UTC'));
+						$dt->setTimezone(new \DateTimeZone(craft()->timezone));
 
 						// Create a new entry with alert data 
 						// $sectionHandle, $author_id, $title, $type, $type_handle, $custom_id, $custom_id_handle, $content, $content_handle, $timestamp = NULL
@@ -143,7 +143,7 @@ class Wmata_Helper
 							$this->custom_id_handle,
 							$busIncident->Description,
 							$this->content_handle,
-							$dt->format('U')
+							$dt
 						);
 					}
 				}

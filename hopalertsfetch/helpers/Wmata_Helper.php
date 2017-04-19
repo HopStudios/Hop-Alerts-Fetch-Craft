@@ -201,7 +201,7 @@ class Wmata_Helper
 		$result = json_decode($this->wmata_api->get_rail_incidents());
 		if ($result == NULL)
 		{
-			HopAlertsFetchPlugin::log('json received for buses is not valid', LogLevel::Error);
+			HopAlertsFetchPlugin::log('json received for rail is not valid', LogLevel::Error);
 			return;
 		}
 

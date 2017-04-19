@@ -9,7 +9,7 @@ class Twitter_API
 
 	public function __construct($access_token, $access_token_secret, $consumer_key, $consumer_secret)
 	{
-		require_once PATH_THIRD.'hop_alerts_fetch/lib/TwitterAPIExchange.php';
+		require_once CRAFT_PLUGINS_PATH.'hopalertsfetch/lib/TwitterAPIExchange.php';
 
 		$settings = array(
 			'oauth_access_token' => $access_token,
@@ -18,7 +18,7 @@ class Twitter_API
 			'consumer_secret' => $consumer_secret
 		);
 
-		$this->twitter_api_exchange = new TwitterAPIExchange($settings);
+		$this->twitter_api_exchange = new \TwitterAPIExchange($settings);
 	}
 
 	public function get_traffic_tweets($since = NULL)

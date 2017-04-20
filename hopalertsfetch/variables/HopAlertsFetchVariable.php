@@ -22,27 +22,27 @@ namespace Craft;
 
 class HopAlertsFetchVariable
 {
-    /**
-     * Whatever you want to output to a Twig tempate can go into a Variable method. You can have as many variable
-     * functions as you want.  From any Twig template, call it like this:
-     *
-     *     {{ craft.hopAlertsFetch.exampleVariable }}
-     *
-     * Or, if your variable requires input from Twig:
-     *
-     *     {{ craft.hopAlertsFetch.exampleVariable(twigValue) }}
-     */
-    public function exampleVariable($optional = null)
-    {
-        return "And away we go to the Twig template...";
-    }
+	/**
+	 * Whatever you want to output to a Twig tempate can go into a Variable method. You can have as many variable
+	 * functions as you want.  From any Twig template, call it like this:
+	 *
+	 *     {{ craft.hopAlertsFetch.exampleVariable }}
+	 *
+	 * Or, if your variable requires input from Twig:
+	 *
+	 *     {{ craft.hopAlertsFetch.exampleVariable(twigValue) }}
+	 */
+	public function exampleVariable($optional = null)
+	{
+		return "And away we go to the Twig template...";
+	}
 
-    /**
-     * Doesn't output anything, simply trigger fetching the alerts
-     */
-    public function fetchAlerts()
-    {
-        craft()->hopAlertsFetch_main->fetchAllAlerts();
-        return 'fetched';
-    }
+	/**
+	 * Doesn't output anything, simply trigger fetching the alerts
+	 */
+	public function fetchAlerts()
+	{
+		craft()->hopAlertsFetch_main->fetchAllAlerts();
+		return '';
+	}
 }

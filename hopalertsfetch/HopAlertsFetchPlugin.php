@@ -73,7 +73,7 @@ class HopAlertsFetchPlugin extends BasePlugin
 	 */
 	public function getDocumentationUrl()
 	{
-		return '???';
+		return 'https://github.com/HopStudios/Hop-Alerts-Fetch-Craft';
 	}
 
 	/**

@@ -22,47 +22,51 @@ namespace Craft;
 
 class HopAlertsFetch_MainService extends BaseApplicationComponent
 {
-    private $_settings = array();
+	private $_settings = array();
 
-    public function __construct()
-    {
-        $this->_settings = craft()->plugins->getPlugin('HopAlertsFetch')->getSettings();
-    }
+	public function __construct()
+	{
+		$this->_settings = craft()->plugins->getPlugin('HopAlertsFetch')->getSettings();
+	}
 
-    /**
-     * This function can literally be anything you want, and you can have as many service functions as you want
-     *
-     * From any other plugin file, call it like this:
-     *
-     *     craft()->hopAlertsFetch_main->exampleService()
-     */
-    public function exampleService()
-    {
-    }
+	/**
+	 * This function can literally be anything you want, and you can have as many service functions as you want
+	 *
+	 * From any other plugin file, call it like this:
+	 *
+	 *     craft()->hopAlertsFetch_main->exampleService()
+	 */
+	public function exampleService()
+	{
+	}
 
-    public function fetchAllAlerts()
-    {
-        $this->fetchWmataAlerts();
-    }
+	public function fetchAllAlerts()
+	{
+		$this->fetchWmataAlerts();
+		$this->fetchTwitterAlerts();
+		$this->fetchRSSAlerts();
+	}
 
-    public function startFetchTask()
-    {
-        // TODO : use Task later
-    }
+	public function startFetchTask()
+	{
+		// TODO : use Task later
+	}
 
-    public function fetchWmataAlerts()
-    {
-        $helper = new Wmata_Helper($this->_settings->wmata_api_key);
-    }
+	public function fetchWmataAlerts()
+	{
+		$helper = new Wmata_Helper();
+		$helper->update_alerts();
+	}
 
-    public function fetchTwitterAlerts()
-    {
+	public function fetchTwitterAlerts()
+	{
+		$helper = new Twitter_Helper();
+		$helper->update_alerts();
+	}
 
-    }
-
-    public function fetchRSSAlerts()
-    {
-
-    }
-
+	public function fetchRSSAlerts()
+	{
+		$helper = new RSS_Helper();
+		$helper->update_alerts();
+	}
 }

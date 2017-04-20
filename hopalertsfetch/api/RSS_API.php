@@ -25,7 +25,7 @@ class RSS_api
 		}
 
 		// Parse that thing to retrieve meaningful content
-		$rss = new DOMDocument();
+		$rss = new \DOMDocument();
 		$result = $rss->loadXML($rss_feed);
 
 		if ($result === FALSE)
@@ -68,7 +68,7 @@ class RSS_api
 		}
 
 		// Parse that thing to retrieve meaningful content
-		$rss = new DOMDocument();
+		$rss = new \DOMDocument();
 		$result = $rss->loadXML($rss_feed);
 
 		if ($result === FALSE)
@@ -111,7 +111,7 @@ class RSS_api
 		}
 
 		// Parse that thing to retrieve meaningful content
-		$rss = new DOMDocument();
+		$rss = new \DOMDocument();
 		$result = $rss->loadXML($rss_feed);
 
 		if ($result === FALSE)
@@ -154,7 +154,7 @@ class RSS_api
 		}
 
 		// Parse that thing to retrieve meaningful content
-		$rss = new DOMDocument();
+		$rss = new \DOMDocument();
 		$result = $rss->loadXML($rss_feed);
 
 		if ($result === FALSE)
